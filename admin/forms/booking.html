@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking - Uni Folks Theater</title>
+    <link rel="icon" href="../../assets/img/logo.ico">
+    <link rel="stylesheet" href="../../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,600,600i">
+</head>
+
+
+
+<body>
+  <nav class="navbar navbar-dark navbar-expand-lg fixed-top  clean-navbar" style="background-color: black;">
+      <div class="container"><a class="navbar-brand logo" href="../index.html"><img src="../../assets/img/logo.png" width="67;" height="44"></a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+          <div class="collapse navbar-collapse"
+              id="navcol-1">
+              <ul class="nav navbar-nav ml-auto">
+                  <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Create
+                      </a>
+                      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item small" href="seats.html">Seating area record</a>
+                        <a class="dropdown-item small" href="ergo.html">Theatrical play record</a>
+                        <a class="dropdown-item small" href="scheduler.html">Theatrical play schedule</a>
+                        <a class="dropdown-item small" href="actors.html">Actors - plays record</a>
+                      </div>
+                  </li>
+                  <li class="nav-item" role="presentation"><a class="nav-link" href="reserve.html">Reserve a Seat</a></li>
+                  <li class="nav-item active" role="presentation"><a class="nav-link" href="booking.html">Book Tickets</a></li>
+                  <li class="nav-item" role="presentation"><a class="nav-link" href="../about-us.html">About</a></li>
+                  <li class="nav-item" role="presentation"><a class="nav-link" href="../contact-us.html">Contact</a></li>
+              </ul>
+          </div>
+      </div>
+  </nav>
+    <main class="page faq-page">
+	<nav aria-label="breadcrumb" >
+	  <ol class="breadcrumb" style= "margin-top: 5px;">
+      <li class="breadcrumb-item"><a href="../../index.html">Home</a></li>
+      <li class="breadcrumb-item"><a href="../index.html">Admin</a></li>
+		<li class="breadcrumb-item active" aria-current="page">Book ticket</li>
+	  </ol>
+	</nav>
+        <section class="clean-block clean-faq dark">
+            <div class="container">
+                <div class="block-heading">
+                    <h2 class="text-info">UNI FOLKS Theater Services</h2>
+                    <p>Booking tickets</p>
+                </div>
+
+                <div id="enabler" style="text-align: center;">
+                <p>Click button to start booking</p>
+                <a onclick="myFunction()" id="filter" >
+                <img src="../../assets/img/add.png" width="100;" height="100"/>
+                </a>
+                </div>
+
+                <script src="../../assets/js/filter.js"></script>
+
+                <div id="hider" style="display: none; margin-top: -50px;">
+                  <form id="regForm" action="../response/complete_booking.html">
+                      <h1>Booking:</h1>
+                      <!-- One "tab" for each step in the form: -->
+                      <div class="tab">Individual information:
+                        <p>Name<input placeholder="Full Name..." oninput="this.className = ''" name="tname"></p>
+                        <p>Gender <select name="Sex">
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                          </select></p>
+                          <p>Age<input type="number" oninput="this.className = ''" name="age" min="1" max="120" required></p>
+                          <p>Email<input type="email" id="emailAddress" type="email" required></p>
+                        <button type="reset" style="width: 40%;margin-bottom:15px;">Reset</button>
+<a onclick="Func()" style="width: 40%;margin-bottom:25px;margin-left:10px;">Cancel</a>
+                      </div>
+                      <div class="tab">Theatrical Play information:<br>
+                        <p><input list="plays" name="plays">
+                            <datalist id="plays">
+                              <option value="Antigone">
+                              <option value="Bonnie and Clyde">
+                              <option value="Children of Eden">
+                              <option value="Godspell">
+                              <option value="Once Upon a Mattress">
+                            </datalist></p>
+                        <p><input type="date" oninput="this.className = ''" name="datefrom"></p>
+                        <p><input type="time" class="form-control" id="time" name="time[]" value=""></p>
+                        <button type="reset" style="width: 40%;margin-bottom:15px;">Reset</button>
+<a onclick="Func()" style="width: 40%;margin-bottom:25px;margin-left:10px;">Cancel</a>
+                      </div>
+                      <div class="tab">Payment information:<br>
+                        Method <select name="charge">
+                          <option value="Credit">Credit Card</option>
+                          <option value="Visa">Visa</option>
+                          <option value="BitCoin">BitCoin</option>
+                          <option value="Cash">Cash</option>
+                        </select></p>
+                        <div class="control-group">
+            <label class="control-label">Card Holder's Name</label>
+            <div class="controls">
+              <input type="text" class="input-block-level" pattern="\w+ \w+.*">
+            </div>
+          </div><br>
+
+          <div class="control-group">
+            <label class="control-label">Card Number</label>
+            <div class="controls">
+              <div class="row-fluid">
+                <div class="span3">
+                  <input type="text" class="input-block-level" maxlength="16">
+                </div>
+              </div>
+            </div>
+          </div><br>
+
+          <div class="control-group">
+            <label class="control-label">Card Expiry Date</label>
+            <div class="controls">
+              <div class="row-fluid">
+                <div class="span9">
+                  <select class="input-block-level">
+                    <option>January</option>
+                    <option>February</option>
+                    <option>March</option>
+                    <option>April</option>
+                    <option>May</option>
+                    <option>June</option>
+                    <option>July</option>
+                    <option>August</option>
+                    <option>September</option>
+                    <option>Octomber</option>
+                    <option>November</option>
+                    <option>December</option>
+                  </select>
+                </div>
+                <div class="span3">
+                  <select class="input-block-level">
+                    <option>2018</option>
+                    <option>2019</option>
+                    <option>2020</option>
+                    <option>2021</option>
+                    <option>2022</option>
+                    <option>2023</option>
+                    <option>2024</option>
+                    <option>2025</option>
+                    <option>2026</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="control-group">
+            <label class="control-label">Card CVV</label>
+            <div class="controls">
+              <div class="row-fluid">
+                <div class="span3">
+                  <input type="text" class="input-block-level" style="width:60px;" autocomplete="off" maxlength="3" pattern="\d{3}" title="Three digits at back of your card" required>
+                </div>
+                <div class="span8">
+                  <!-- screenshot may be here -->
+                </div>
+              </div>
+            </div>
+          </div><br>
+                        <button type="reset" style="width: 40%;margin-bottom:15px;">Reset</button>
+<a onclick="Func()" style="width: 40%;margin-bottom:25px;margin-left:10px;">Cancel</a>
+                      </div>
+                      <div style="overflow:auto;">
+                        <div style="float:right;">
+                          <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+                          <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+                        </div>
+                      </div>
+                      <!-- Circles which indicates the steps of the form: -->
+                      <div style="text-align:center;margin-top:40px;">
+                        <span class="step"></span>
+                        <span class="step"></span>
+                        <span class="step"></span>
+                      </div>
+                    </form>
+                </div>
+
+                <script src="../../assets/js/steps.js"></script>
+                <script src="../../assets/js/redir.js"></script>
+            </div>
+        </section>
+    </main>
+	<footer  style="background-color: #222425; position: fixed; bottom: 0; width: 100%; color: white; text-align: center;">
+        <div class="footer-copyright" style="margin-top: 3px; margin-bottom: 3px;">
+            © 2018 Uni Folks
+        </div>
+    </footer>
+    <script src="../../assets/js/jquery.min.js"></script>
+    <script src="../../assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../../assets/js/theme.js"></script>
+</body>
+
+</html>

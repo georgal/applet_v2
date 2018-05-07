@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservation - Uni Folks Theater</title>
+    <link rel="icon" href="../assets/img/logo.ico">
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,600,600i">
+</head>
+
+
+
+<body>
+  <nav class="navbar navbar-dark navbar-expand-lg fixed-top  clean-navbar" style="background-color: black;">
+      <div class="container"><a class="navbar-brand logo" href="../index.html"><img src="../assets/img/logo.png" width="67;" height="44"></a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+          <div class="collapse navbar-collapse"
+              id="navcol-1">
+              <ul class="nav navbar-nav ml-auto">
+                  <li class="nav-item active" role="presentation"><a class="nav-link" href="reserve.html">Reserve a Seat</a></li>
+                  <li class="nav-item" role="presentation"><a class="nav-link" href="booking.html">Book Tickets</a></li>
+                  <li class="nav-item" role="presentation"><a class="nav-link" href="../about-us.html">About</a></li>
+                  <li class="nav-item" role="presentation"><a class="nav-link" href="../contact-us.html">Contact</a></li>
+              </ul>
+          </div>
+      </div>
+  </nav>
+    <main class="page faq-page">
+	<nav aria-label="breadcrumb" >
+	  <ol class="breadcrumb" style= "margin-top: 5px;">
+		<li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+		<li class="breadcrumb-item active" aria-current="page">Reserve a seat</li>
+	  </ol>
+	</nav>
+        <section class="clean-block clean-faq dark">
+            <div class="container">
+                <div class="block-heading">
+                    <h2 class="text-info">UNI FOLKS Theater Services</h2>
+                    <p>Reserve a seat</p>
+                </div>
+
+<div id="enabler" style="text-align: center;">
+  <p>Click button to make a new reservation</p>
+  <a onclick="myFunction()" id="filter" >
+    <img src="../assets/img/add.png" width="100;" height="100"/>
+</a>
+</div>
+<script src="../assets/js/filter.js"></script>
+
+<div id="hider" style="display: none; margin-top: -50px;">
+  <form id="regForm" action="../response/complete_reservation.html">
+      <h1>Reservation:</h1>
+      <!-- One "tab" for each step in the form: -->
+      <div class="tab">Play Title:
+        <p><input list="plays" name="plays">
+            <datalist id="plays">
+              <option value="Antigone">
+              <option value="Bonnie and Clyde">
+              <option value="Children of Eden">
+              <option value="Godspell">
+              <option value="Once Upon a Mattress">
+            </datalist></p>
+            <button type="reset" style="width: 40%;margin-bottom:15px;">Reset</button>
+            <a onclick="Func()" style="width: 40%;margin-bottom:25px;margin-left:10px;">Cancel</a>
+      </div>
+      <div class="tab">Insert Date & Time:<br>
+        <p><input type="date" oninput="this.className = ''" name="datefrom"></p>
+        <p><input type="time" class="form-control" id="time" name="time[]" value=""></p>
+        <button type="reset" style="width: 40%;margin-bottom:15px;">Reset</button>
+        <a onclick="Func()" style="width: 40%;margin-bottom:25px;margin-left:10px;">Cancel</a>
+      </div>
+      <div class="tab">Cross-identification:<br>
+        <p>Ticket number <small>8-digit</small><input type="number" oninput="this.className = ''" name="seats" minlength="8" maxlength="8"></p>
+        <p>Pick A Seat<br>
+          Zone Code <select name="Zones">
+            <option value="A">A</option>
+            <option value="B">B</option>
+            <option value="C">C</option>
+            <option value="D">D</option>
+            <option value="E">E</option>
+            <option value="F">F</option>
+            <option value="G">G</option>
+            <option value="H">H</option>
+          </select></p>
+          <p>Seat Number <select name="numbers">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+            </select></p>
+
+            <button type="reset" style="width: 40%;margin-bottom:15px;">Reset</button>
+            <a onclick="Func()" style="width: 40%;margin-bottom:25px;margin-left:10px;">Cancel</a>
+      </div>
+      <div style="overflow:auto;">
+        <div style="float:right;">
+          <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+          <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+        </div>
+      </div>
+      <!-- Circles which indicates the steps of the form: -->
+      <div style="text-align:center;margin-top:40px;">
+        <span class="step"></span>
+        <span class="step"></span>
+        <span class="step"></span>
+      </div>
+    </form>
+</div>
+
+<script src="../assets/js/steps.js"></script>
+<script src="../assets/js/redir.js"></script>
+            </div>
+        </section>
+    </main>
+	<footer  style="background-color: #222425; position: fixed; bottom: 0; width: 100%; color: white; text-align: center;">
+        <div class="footer-copyright" style="margin-top: 3px; margin-bottom: 3px;">
+            © 2018 Uni Folks
+        </div>
+    </footer>
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../assets/js/theme.js"></script>
+</body>
+
+</html>
